@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<web-app>
+	<!-- 서블릿 S -->
+	<servlet>
+		<servlet-name>Blog Write</servlet-name>	
+		<servlet-class>com.controller.WriteController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Blog Write</servlet-name>
+		<url-pattern>/blog/write</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Blog view</servlet-name>
+		<servlet-class>com.controller.ViewController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Blog view</servlet-name>
+		<url-pattern>/blog/view</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Blog List</servlet-name>
+		<servlet-class>com.controller.ListController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Blog List</servlet-name>
+		<url-pattern>/blog/list</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>File Upload</servlet-name>
+		<servlet-class>com.controller.UploadController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>File Upload</servlet-name>
+		<url-pattern>/popup/upload</url-pattern>
+	</servlet-mapping>
+	<!-- 서블릿 E -->
+	<!-- 필터 S -->
+	<filter>
+		<filter-name>Common Filter</filter-name>
+		<filter-class>com.filter.CommonFilter</filter-class>
+		<init-param>
+			<param-name>DBDriver</param-name>
+			<param-value>com.mysql.cj.jdbc.Driver</param-value>
+		</init-param>
+		<init-param>
+			<param-name>DBUrl</param-name>	
+			<param-value>jdbc:mysql://localhost:3306/blog</param-value>
+		</init-param>
+		<init-param>
+			<param-name>DBUser</param-name>
+			<param-value>root</param-value>
+		</init-param>
+		<init-param>
+			<param-name>DBPass</param-name>
+			<param-value>dltkavkf3</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>Common Filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- 필터 E -->
+</web-app>
